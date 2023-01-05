@@ -27,5 +27,5 @@ An overview of various Data-Science related projects for my classes at UCLA or f
 > A compartmental model to evacuate the Louvre Museum in Paris in case of an emergency. My contribution to the group project completed for the class MATH 42.    
 
 ### [[9] Why the Long Face?](https://github.com/minisnoel/Data_Science_Portfolio/tree/main/%5B8%5D%20Leavin'%20Lisa):
-> Publication in the undergraduate journal _Think You?!_ run by the Bay Honors Symposium. A copy of the publication is uploaded here as the Bay Honors Symposium website is currently under construction. 
+> An article that was published in 2022 of the undergraduate journal _Think You?!_ run by the Bay Honors Symposium. A copy of the publication is uploaded here as the Bay Honors Symposium website is currently under construction. 
 
