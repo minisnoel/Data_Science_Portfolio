@@ -1,0 +1,183 @@
+---
+title: "Final Section 2 Models"
+author: "Marieth Coetzer"
+date: "12/11/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+library(readxl)
+library(brms) 
+library(rstan)
+library(loo)
+library(bayesplot)
+color_scheme_set("brightblue")
+
+```
+### Section 2.2
+
+```{r}
+
+bayes_seed <- 1234
+
+data_import <- read_excel("Final Small Training Data Set.xlsx", sheet = NULL)
+df_ <- na.omit(data.frame(data_import))
+df <- df_
+df$Log.GDP.per.capita <- scale(df_$Log.GDP.per.capita, scale = F)
+df$Freedom.to.make.life.choices <- scale(df_$Freedom.to.make.life.choices, scale = F)
+df$Social.support <- scale(df_$Social.support, scale = F)
+
+dim(df)
+
+head(df,5)
+
+```
+
+```{r}
+
+model_1_year <- brm(
+  bf(Social.support ~ year  + (1 + year | Country.name)),
+  data = df, control = list(adapt_delta = 0.99),
+  chains = 4, seed = bayes_seed, warmup = 1000, save_pars = save_pars(all = TRUE),
+  iter = 2000
+)
+
+pp_check(model_1_year, ndraws = 500)
+plot(model_1_year)
+
+```
+
+```{r}
+
+model_2_GDP <- brm(
+  bf(Social.support ~ Log.GDP.per.capita + year + (1 + Log.GDP.per.capita + year | Country.name)),
+  data = df, control = list(adapt_delta = 0.99),
+  chains = 4, seed = bayes_seed, warmup = 1000, save_pars = save_pars(all = TRUE),
+  iter = 2000 
+)
+
+pp_check(model_2_GDP, ndraws = 500)
+plot(model_2_GDP)
+
+```
+
+```{r}
+
+model_3_Freedom <- brm(
+  bf(Social.support ~ Freedom.to.make.life.choices + year + (1 + Freedom.to.make.life.choices + year | Country.name)),
+  data = df, control = list(adapt_delta = 0.99),
+  chains = 4, seed = bayes_seed, warmup = 1000, save_pars = save_pars(all = TRUE),
+  iter = 2000 # 
+)
+
+pp_check(model_3_Freedom, ndraws = 500)
+plot(model_3_Freedom)
+
+```
+
+```{r}
+
+model_4_GDP_Freedom <- brm(
+  bf(Social.support ~ Freedom.to.make.life.choices + Log.GDP.per.capita + year + (1 + Freedom.to.make.life.choices +  Log.GDP.per.capita + year | Country.name)),
+  data = df, control = list(adapt_delta = 0.99),
+  chains = 4, seed = bayes_seed, warmup = 1000,save_pars = save_pars(all = TRUE),
+  iter = 2000 
+)
+
+pp_check(model_4_GDP_Freedom, ndraws = 500)
+plot(model_4_GDP_Freedom)
+
+```
+
+```{r}
+
+model_5_Interaction <- brm(
+  bf(Social.support ~ Freedom.to.make.life.choices + Log.GDP.per.capita + Freedom.to.make.life.choices:Log.GDP.per.capita + year + (1 + Freedom.to.make.life.choices +  Log.GDP.per.capita + year | Country.name)),
+  data = df, control = list(adapt_delta = 0.99),
+  chains = 4, seed = bayes_seed, warmup = 1000,save_pars = save_pars(all = TRUE),
+  iter = 2000
+)
+
+pp_check(model_5_Interaction, ndraws = 500)
+plot(model_5_Interaction)
+
+```
+
+
+```{r}
+
+loo_model2 <- loo(model_2_GDP, moment_match = TRUE, reloo = TRUE)
+loo_model3 <- loo(model_3_Freedom, moment_match = TRUE, reloo = TRUE)
+loo_model4 <- loo(model_4_GDP_Freedom, moment_match = TRUE, reloo = TRUE)
+loo_model5 <- loo(model_5_Interaction, moment_match = TRUE, reloo = TRUE)
+
+loo_compare(loo_model2, loo_model3, loo_model4, loo_model5)
+
+```
+
+
+```{r}
+
+loo_model2 <- loo(model_2_GDP, moment_match = TRUE, reloo = TRUE)
+loo_model3 <- loo(model_3_Freedom, moment_match = TRUE, reloo = TRUE)
+loo_model4 <- loo(model_4_GDP_Freedom, moment_match = TRUE, reloo = TRUE)
+loo_model5 <- loo(model_5_Interaction, moment_match = TRUE, reloo = TRUE)
+
+loo_compare(loo_model2, loo_model3, loo_model4, loo_model5)
+
+```
+
+
+```{r}
+
+yrep <- posterior_predict(model_5_Interaction, draws = 500)
+
+y <- df$Social.support
+y_vac <- array(y)
+ppc_dens_overlay(y_vac, yrep[1:200, ])
+
+```
+
+```{r}
+
+ppc_hist(y_vac, yrep[1:5, ], binwidth = 20) +
+coord_cartesian(xlim = c(-1, 100))
+
+```
+
+
+```{r}
+
+dataTest_ <- read_excel("Testing Data.xlsx", sheet = NULL)
+
+dfTest_nas_ <- data.frame(dataTest_)
+df_test_ <- na.omit(dfTest_nas_)
+
+df_test <- df_test_
+
+df_test$Social.support <- (10 * df_test$Social.support)^2
+df_test$Freedom.to.make.life.choices <- (10 * df_test$Freedom.to.make.life.choices)^2
+df_test$Social.support <- scale(df_test$Social.support, scale = F)
+df_test$Log.GDP.per.capita <- scale(df_test$Log.GDP.per.capita, scale = F)
+df_test$Freedom.to.make.life.choices <- scale(df_test$Freedom.to.make.life.choices, scale = F)
+
+head(df_test,5)
+
+```
+
+```{r}
+
+yrep_test <- posterior_predict(model_5_Interaction, newdata = df_test, allow_new_levels = TRUE)
+
+y_test <- df_test$Social.support
+y_vac_test <- array(y_test)
+ppc_dens_overlay(y_vac_test, yrep_test[1:200, ]) + xlim(-10000,5000)
+
+
+```

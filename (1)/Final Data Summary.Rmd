@@ -1,0 +1,50 @@
+---
+title: "1.1 Data"
+author: "Marieth Coetzer"
+date: "12/11/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+library(readxl)
+library(ggplot2)
+
+data <- read_excel("Final Small Training Data Set.xlsx", sheet = NULL)
+df_nas <- data.frame(data)
+df <- na.omit(df_nas)
+
+summary(df)
+
+```
+```{r}
+
+library(cowplot)
+library("scales")
+
+
+
+ggplot(df, aes(x = Log.GDP.per.capita, y = Social.support, group = year, color=factor(year))) +
+  geom_boxplot() +  guides(colour = guide_legend(title = "Years")) +   scale_color_discrete(labels = c("2018", "2019", "2020"))
+
+ggplot(df, aes(x = Freedom.to.make.life.choices, y = Social.support, group = year, color=factor(year)))+ geom_boxplot()  +  guides(colour = guide_legend(title = "Years")) +   scale_color_discrete(labels = c("2018", "2019", "2020"))
+
+
+
+ggplot(df, aes(x=Log.GDP.per.capita, color=factor(year), fill=factor(year))) +
+geom_density(alpha=0.3) +  guides(colour = guide_legend(title = "Years")) +   scale_color_discrete(labels = c("2018", "2019", "2020"))
+
+ggplot(df, aes(x=Freedom.to.make.life.choices, color=factor(year), fill=factor(year))) +
+geom_density(alpha=0.3) +  guides(colour = guide_legend(title = "Years")) +   scale_color_discrete(labels = c("2018", "2019", "2020"))
+
+ggplot(df, aes(x=Social.support, color=factor(year), fill=factor(year))) +
+geom_density(alpha=0.3) +  guides(colour = guide_legend(title = "Years")) +   scale_color_discrete(labels = c("2018", "2019", "2020"))
+
+```
+
+
