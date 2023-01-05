@@ -1,6 +1,6 @@
 # Data_Science_Portfolio
 
-An overview of various Data-Science related projects done in different programming languages for my classes at UCLA or for my own enjoyment.
+An overview of various Data-Science related projects for my classes at UCLA or for my own enjoyment.
 
 ### [[1] Analyzing California Commuter Networks During COVID-19 (Python)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
 > Shows a brief network creation using _NetworkX_ (which was used for more complex visualizations) and an SIR compartmental model to predict the spread of COVID-19 via commuters in California. My contribution to the group project for the class MATH 168.
