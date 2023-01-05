@@ -1,8 +1,9 @@
 # Data_Science_Portfolio
 
-An overview of various Data-Science related projects done in different programming languages for my classes at UCLA. 
+An overview of various Data-Science related projects done in different programming languages for my classes at UCLA or for my own enjoyment.
+
+### [Surmising Social Support in the United Nations World Happiness Report: A Bayesian Approach (R)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
+> Folder contains data analysis as well as a multi-level model using the _brm_ function in R to predict social support using Freedom to Make Life Choices and Log Gross Domestic Product. Completed for the class STATS C116. 
 
 
-### [Analyzing Seattle Accident Severity Data](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
-### [Analyzing Seattle Accident Severity Data with Support Vector Machines](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
-> This is my capstone project for the 9-part IBM Data Science Professional Certificate track curated by Coursera. It centers around analyzing and predicting the severity of vehicular accidents in Seattle, Washington based on information such as time of day, date, road conditions, light conditions, weather conditions, and location. The project uses SVMs to parse and analyze the data, and also covers data cleaning, label-encoding, and feature selection. My full report of the project and findings can be found [here](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Seattle%20Accident%20Severity%20Data.pdf).
+A friendly guide to some discrete probability distribution using Superhero examples. 
