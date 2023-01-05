@@ -3,7 +3,7 @@
 An overview of various Data-Science related projects for my classes at UCLA or for my own enjoyment.
 
 ### [[1] Analyzing California Commuter Networks During COVID-19 (Python)](https://github.com/minisnoel/Data_Science_Portfolio/tree/main/%5B1%5D%20Analyzing%20California%20Commuter%20Networks%20During%20COVID-19):
-> Shows a brief network creation using _NetworkX_ (which was used for more complex visualizations) and an SIR compartmental model to predict the spread of COVID-19 via commuters in California. My contribution to the group project for the class MATH 168.
+> Gives a brief introduction to creating a network using _NetworkX_ (which was used for more complex visualizations) and an SIR compartmental model to predict the spread of COVID-19 via commuters in California. My contribution to the group project for the class MATH 168.
 
 ### [[2] Predicting Social Support using Machine Learning Techniques (Python)](https://github.com/minisnoel/Data_Science_Portfolio/tree/main/%5B2%5D%20Predicting%20Social%20Support%20using%20Machine%20Learning%20Techniques):
 > A multivariate linear regression model coded from scratch with the results verified using the _sklearn_ package. My contribution to the group project completed for the class MATH 156.  
