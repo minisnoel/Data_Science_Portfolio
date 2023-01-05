@@ -14,7 +14,7 @@ An overview of various Data-Science related projects for my classes at UCLA or f
 ### [[4] Surmising Social Support in the United Nations World Happiness Report: A Bayesian Approach (R)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
 > Folder contains initial data analysis as well as a multi-level model using the _brm_ function to predict social support using Freedom to Make Life Choices and Log Gross Domestic Product data from the United Nations World Happiness Report 2021. Completed for the class STATS C116. 
 
-### [[5] Predicting Car Prices (R)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
+### [[5] Predicting Car Prices using Multivariate Regression (R)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
 > A multivariate regression model created using the _lm_ function to predict the price of cars given their model. The model ended up having an accuracy of over 92% on the testing data. Completed for the class STATS 101A. 
 
 ### [[6] Cutting Out the Copy (R)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
