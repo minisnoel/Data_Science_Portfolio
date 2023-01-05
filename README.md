@@ -5,7 +5,7 @@ An overview of various Data-Science related projects for my classes at UCLA or f
 ### [[1] Analyzing California Commuter Networks During COVID-19 (Python)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
 > Shows a brief network creation using _NetworkX_ (which was used for more complex visualizations) and an SIR compartmental model to predict the spread of COVID-19 via commuters in California. My contribution to the group project for the class MATH 168.
 
-### [[2] Math 156 (Python)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
+### [[2] Predicting Social Support using Machine Learning Techniques (Python)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
 > A multivariate linear regression model coded from scratch with the results verified using the _function_. My contribution to the group project completed for the class MATH 156.  
 
 ### [[3] Stats 21 (Python)](https://github.com/AMistry001/Data_Science_Portfolio/blob/main/Analyzing%20Seattle%20Accident%20Severity%20Data/Analyzing%20Accident%20Severity%20Data%20in%20Seattle%20(2014-2020).ipynb):
